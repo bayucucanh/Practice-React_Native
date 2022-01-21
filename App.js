@@ -1,102 +1,45 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
+import React, { Component } from 'react';
+import {Text, View, Image, TextInput} from 'react-native';
 
-import React from 'react';
-import type {Node} from 'react';
-import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
-} from 'react-native';
-
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
-
-const Section = ({children, title}): Node => {
-  const isDarkMode = useColorScheme() === 'dark';
+const App = () => {
   return (
-    <View style={styles.sectionContainer}>
-      <Text
-        style={[
-          styles.sectionTitle,
-          {
-            color: isDarkMode ? Colors.white : Colors.black,
-          },
-        ]}>
-        {title}
-      </Text>
-      <Text
-        style={[
-          styles.sectionDescription,
-          {
-            color: isDarkMode ? Colors.light : Colors.dark,
-          },
-        ]}>
-        {children}
-      </Text>
+    <View>
+      <Text>Hello World!</Text>
+      <Bayuc />
+      <View style={{width: 80, height: 80, backgroundColor: '#9b59b6'}} />
+      <Photo />
+      <TextInput style={{borderWidth: 1}} />
+      <BoxGreen />
+      <Profile />
     </View>
   );
 };
 
-const App: () => Node = () => {
-  const isDarkMode = useColorScheme() === 'dark';
-
-  const backgroundStyle = {
-    backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
-  };
-
-  return (
-    <SafeAreaView style={backgroundStyle}>
-      <StatusBar barStyle={isDarkMode ? 'light-content' : 'dark-content'} />
-      <ScrollView
-        contentInsetAdjustmentBehavior="automatic"
-        style={backgroundStyle}>
-        <Header />
-        <View
-          style={{
-            backgroundColor: isDarkMode ? Colors.black : Colors.white,
-          }}>
-          <Section title="Hello World">
-            Edit <Text style={styles.highlight}>App.js</Text> to change this
-            screen and then come back to see your edits.
-          </Section>
-        </View>
-      </ScrollView>
-    </SafeAreaView>
-  );
+const Bayuc = () => {
+  return <Text>Bayuc</Text>;
 };
 
-const styles = StyleSheet.create({
-  sectionContainer: {
-    marginTop: 32,
-    paddingHorizontal: 24,
-  },
-  sectionTitle: {
-    fontSize: 24,
-    fontWeight: '600',
-  },
-  sectionDescription: {
-    marginTop: 8,
-    fontSize: 18,
-    fontWeight: '400',
-  },
-  highlight: {
-    fontWeight: '700',
-  },
-});
+const Photo = () => {
+  return <Image source={{uri: 'https://imagesource.io/wp-content/uploads/2021/12/Akita-Japanese-Bed-768x512.jpg'}} style={{width:100, height: 100 }}/>;
+};
 
+class BoxGreen extends Component {
+  render() {
+    return <Text>Ini adalah Class Component</Text>;
+  }
+}
+
+class Profile extends Component {
+  render() {
+    return (
+      <View>
+        <Image
+          source={{uri: 'https://static.highsnobiety.com/thumbor/z5xdH576-IFxZcL3_40lVsvwZpo=/1200x720/static.highsnobiety.com/wp-content/uploads/2020/08/31105747/neymar-nike-deal-part-ways-00.jpg' }} 
+          style={{width:100, height: 100, borderRadius: 50, margin: 15}} 
+        />
+        <Text style={{ color: 'blue',  fontSize: 24}}>Ini Neymar</Text>
+      </View>
+    );
+  }
+}
 export default App;

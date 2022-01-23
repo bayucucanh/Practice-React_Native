@@ -4,6 +4,7 @@ import FlexBox from './pages/FlexBox';
 import Position from './pages/Position';
 import StylingComponent from './pages/StylingComponent';
 import SampleComponent from './pages/SampleComponent';
+import PropsDinamis from './pages/PropsDinamis';
 
 const App = () => {
   const [isShow, SetIsShow] = useState(true);
@@ -17,8 +18,9 @@ const App = () => {
       <ScrollView>
         {/* <SampleComponent />
         <StylingComponent /> */}
-        {isShow && <FlexBox />}
+        {/* {isShow && <FlexBox />} */}
         {/* <Position /> */}
+        <PropsDinamis />
       </ScrollView>
     </View>
   );

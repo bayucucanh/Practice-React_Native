@@ -8,6 +8,7 @@
     "start": "react-native start",
     "test": "jest",
     "lint": "eslint .",
+    "lint-fix": "eslint --fix",
     "emulator-android": "/Users/BayuCucan/AppData/Local/Android/Sdk/emulator/emulator -avd android29"
   },
   "dependencies": {

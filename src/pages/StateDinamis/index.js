@@ -11,7 +11,6 @@ const Counter = () => {
     </View>
   );
 }
-
 class CounterClass extends Component {
   state = {
     number: 0,
@@ -21,6 +20,7 @@ class CounterClass extends Component {
       <View>
         <Text>{this.state.number}</Text>
         <Button title='Tambah' onPress={() => this.setState({number:this.state.number + 1}) }/>
+        <Button title='Kurang' onPress={() => this.setState({number:this.state.number - 1}) }/>
       </View>
     );
   }

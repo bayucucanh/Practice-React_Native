@@ -77,7 +77,9 @@ const CallAPIVanilla = () => {
       <Text style={styles.textTitle}>Call API dengan Vanilla.js</Text>
       <Button title='GET DATA' onPress={getData}/>
       <Text>Response GET DATA</Text>
-      <Image source={{ uri: dataUser.avatar }} style={styles.image} />
+      {dataUser.avatar.length > 0 && (
+        <Image source={{ uri: dataUser.avatar }} style={styles.image} />
+      )}
       <Text>{`${dataUser.first_name} ${dataUser.last_name}`}</Text>
       <Text>{dataUser.email}</Text>
 

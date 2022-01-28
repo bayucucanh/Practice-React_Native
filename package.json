@@ -12,6 +12,7 @@
     "emulator-android": "/Users/BayuCucan/AppData/Local/Android/Sdk/emulator/emulator -avd android29"
   },
   "dependencies": {
+    "axios": "^0.25.0",
     "react": "17.0.2",
     "react-native": "0.66.4",
     "react-native-svg": "^12.1.1"

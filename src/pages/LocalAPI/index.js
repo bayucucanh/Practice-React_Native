@@ -1,16 +1,16 @@
 import { Button, StyleSheet, Text, TextInput, View, Image } from 'react-native';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useState } from 'react/cjs/react.development';
 import axios from 'axios';
 
-const Item = () => {
+const Item = ({name, email, bidang}) => {
   return (
     <View style={styles.itemContainer}>
         <Image source={{ uri: 'https://source.unsplash.com/100x100?Profile' }} style={styles.avatar}/>
         <View style={styles.desc}>
-          <Text style={styles.descName}>Nama Lengkap</Text>
-          <Text style={styles.descEmail}>Email</Text>
-          <Text style={styles.descBidang}>Bidang</Text>
+          <Text style={styles.descName}>{name}</Text>
+          <Text style={styles.descEmail}>{email}</Text>
+          <Text style={styles.descBidang}>{bidang}</Text>
         </View>
         <Text style={styles.delete}>X</Text>
       </View>
@@ -21,7 +21,11 @@ const LocalAPI = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [bidang, setBidang] = useState("");
+  const [users, setUsers] = useState([]);
 
+  useEffect(() => {
+    getData();
+  })
   const submit = () => {
     const data = {
       name,
@@ -35,6 +39,15 @@ const LocalAPI = () => {
         setName("");
         setEmail("");
         setBidang("");
+        getData();
+      })
+    }
+
+    const getData = () => {
+      axios.get('http://10.0.2.2:3004/users')
+      .then(res => {
+        console.log('res: ', res);
+        setUsers(res.data);
       })
   }
   return (
@@ -45,9 +58,9 @@ const LocalAPI = () => {
       <TextInput placeholder='Bidang' style={styles.input} value={bidang} onChangeText={(value) => setBidang(value)}/>
       <Button title='Simpan' onPress={submit}/>
       <View style={styles.line} />
-      <Item />
-      <Item />
-      <Item />
+      {users.map(user => {
+        return <Item key={user.id} name={user.name} email={user.email} bidang={user.bidang}/>
+      })}
     </View>
   );
 };

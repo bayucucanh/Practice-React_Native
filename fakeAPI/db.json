@@ -11,6 +11,12 @@
       "email": "bbbbb",
       "bidang": "ccccc",
       "id": 2
+    },
+    {
+      "name": "maman",
+      "email": "mamanemail",
+      "bidang": "guru agama",
+      "id": 3
     }
   ]
 }

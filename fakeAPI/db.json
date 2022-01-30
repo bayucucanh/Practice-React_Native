@@ -1,21 +1,21 @@
 {
   "users": [
     {
-      "id": 1,
-      "name": "Bayuc",
-      "email": "bayuc@gmail.com",
-      "bidang": "react native dev"
+      "name": "Bayu Cucan",
+      "email": "bayucucan@gmail.com",
+      "bidang": "react native dev",
+      "id": 1
     },
     {
-      "name": "aaaaaa",
-      "email": "bbbbb",
-      "bidang": "ccccc",
+      "name": "Andrik",
+      "email": "dada@yahool.com",
+      "bidang": "Apoteker",
       "id": 2
     },
     {
-      "name": "maman",
-      "email": "mamanemail",
-      "bidang": "guru agama",
+      "name": "Cardia",
+      "email": "cardia22@gmail.com",
+      "bidang": "Wiraswasta",
       "id": 3
     }
   ]

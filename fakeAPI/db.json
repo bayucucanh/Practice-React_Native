@@ -1,29 +1,16 @@
 {
-  "posts": [
+  "users": [
     {
       "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "Bayuc",
+      "email": "bayuc@gmail.com",
+      "bidang": "react native dev"
     },
     {
-      "title": "Yeaahhh",
-      "author": "Bayu Cucan",
+      "name": "aaaaaa",
+      "email": "bbbbb",
+      "bidang": "ccccc",
       "id": 2
-    },
-    {
-      "title": "Kungkikaw",
-      "author": "Bayu",
-      "id": 3
     }
-  ],
-  "comments": [
-    {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
-    }
-  ],
-  "profile": {
-    "name": "typicode"
-  }
+  ]
 }
